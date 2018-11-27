@@ -1,0 +1,6 @@
+<h1>Transaction create page</h1>
+
+<%= form_for [transaction] do |f| %>
+	<%= f.collection_select(Coin.all, styles.sort_by { |f| f.name }, :id, :name, include_blank: true) %><br>
+	<%= f.submit %>
+<% end %>
