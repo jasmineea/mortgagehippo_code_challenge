@@ -4,7 +4,7 @@ Rails.application.routes.draw do
               post 'user_token' => 'user_token#create'
 
               get '/user/transactions' => 'users#transactions'
-              # get 'users/:id' => 'users#show'
+      
               post '/users/create' => 'users#create'
               patch '/user/:id' => 'users#update'
               delete '/user/:id' => 'users#destroy'

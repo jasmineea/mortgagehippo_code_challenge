@@ -33,7 +33,7 @@ class Api::V1::TransactionsController < ApplicationController
   
           render json: @transaction, status: :created, location: api_v1_coins_url
         else
-          render json: { status: :unprocessable_entity, msg: 'Oops! Looks like you are trying to overdraw this coin.' }
+          render json: { status: :unprocessable_entity, msg: 'Not enough coins available' }
         end
       else
         render json: @transaction.errors, status: :unprocessable_entity

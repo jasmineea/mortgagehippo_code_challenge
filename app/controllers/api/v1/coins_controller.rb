@@ -1,49 +1,53 @@
 class Api::V1::CoinsController < ApplicationController
-    before_action :set_coin, only: [:show, :update, :destroy]
+  before_action :set_coin, only: [:show, :update, :destroy]
+  before_action :authenticate_user
 
-    # View all Coins
-    def index
-        @coins = Coin.all
-        render "index.json.jbuilder"
-    end
-     # Create new coin
-    def create
-        @coin = Coin.new(
-            value: params[:value],
-            name: params[:name],
-        )
-        if coin.save
-            render "show.json.jbuilder"
-        else
-            render json: {errors: @coin.errors.full_messages},
-            status: :unprocessable_entity
-    end
-end
+  def index
+    @coins = Coin.all
 
-# View a single Coin
-def show 
-    id_input = params['id']
-    @coin = Coin.find_by(id: id_input)
-    render "show.json.jbuilder"
-end
- # Update attributes on an existing coin
-def update
-    @coin = Coin.find_by(id: params[:id])
-    @coin.name = params[:name] || @coin.name
-    @coin.value = params[:value] || coin.value
+    render json: @coins
+  end
+ 
+  def total
+    @total = Coin.total
+
+    render json: @total
+  end
+
+  def show
+    render json: @coin
+  end
+
+  def create
+    @coin = Coin.new(coin_params)
 
     if @coin.save
-        render "show.json.jbuilder"
+      render json: @coin, status: :created, location: api_v1_coin_url(@coin)
     else
-        render json: {errors: @coin.errors.full_messages},
-        status: :unprocessable_entity
+      render json: @coin.errors, status: :unprocessable_entity
     end
-end
-# Delete a Coin from the System
-def destroy
-    @coin = Coin.find_by(id: params[:id])
-    @coin.destroy
-    render json: {message: "The coin was deleted."}
-end
+  end
 
+  def update
+    if @coin.update(coin_params)
+      render json: @coin
+    else
+      render json: @coin.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @coin.destroy
+    render json: { status: 200, msg: 'Coin has been deleted.' }
+  end
+
+
+  private
+    def set_coin
+      @coin = Coin.find(params[:id])
+    end
+
+    def coin_params
+      params.require(:coin).permit(:value, :name)
+    end
 end
