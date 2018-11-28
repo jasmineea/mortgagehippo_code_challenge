@@ -1,9 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+<<<<<<< HEAD
   value: 1
   name: MyString
 
 two:
   value: 1
   name: MyString
+=======
+  name: MyString
+  value: 9.99
+
+two:
+  name: MyString
+  value: 9.99
+>>>>>>> 9568bf8e87d3e6ac8c2cfeae9ddc30c4f37c75d1

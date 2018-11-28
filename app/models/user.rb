@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+<<<<<<< HEAD
 	has_secure_password
   has_many :transactions
 
@@ -22,4 +23,6 @@ class User < ApplicationRecord
     role == 'admin'
   end
 
+=======
+>>>>>>> 9568bf8e87d3e6ac8c2cfeae9ddc30c4f37c75d1
 end
