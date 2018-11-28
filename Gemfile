@@ -15,14 +15,13 @@ gem 'puma', '~> 3.11'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-<<<<<<< HEAD
+
 gem 'bcrypt', '~> 3.1.7'
 gem 'active_model_serializers'
 gem 'rack-cors'
 gem 'knock'
 gem 'jwt'
-=======
->>>>>>> 9568bf8e87d3e6ac8c2cfeae9ddc30c4f37c75d1
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -50,7 +49,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-=======
+
   gem 'rspec-rails', '~> 3.8'
 
 end

@@ -10,41 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_11_27_081410) do
-=======
-ActiveRecord::Schema.define(version: 2018_11_27_021528) do
->>>>>>> 9568bf8e87d3e6ac8c2cfeae9ddc30c4f37c75d1
+ActiveRecord::Schema.define(version: 2018_11_27_142341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "coins", force: :cascade do |t|
-<<<<<<< HEAD
     t.integer "value"
     t.string "name"
-=======
-    t.string "name"
-    t.decimal "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.integer "user_id"
     t.integer "coin_id"
-    t.boolean "withdrawl"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "deposit", default: false
+    t.boolean "withdrawal", default: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "username"
     t.string "email"
     t.string "password_digest"
-    t.boolean "admin"
-    t.string "api_key"
->>>>>>> 9568bf8e87d3e6ac8c2cfeae9ddc30c4f37c75d1
+    t.string "role"
+    t.datetime "last_login"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

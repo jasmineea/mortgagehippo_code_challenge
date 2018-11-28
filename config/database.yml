@@ -23,21 +23,21 @@ default: &default
 
 development:
   <<: *default
-<<<<<<< HEAD
+
   database: mortgage_hippo_development
-=======
+
   database: mortgage-hippo_development
->>>>>>> 9568bf8e87d3e6ac8c2cfeae9ddc30c4f37c75d1
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-<<<<<<< HEAD
+
   #username: mortgage_hippo
-=======
+
   #username: mortgage-hippo
->>>>>>> 9568bf8e87d3e6ac8c2cfeae9ddc30c4f37c75d1
+
 
   # The password associated with the postgres role (username).
   #password:
@@ -65,11 +65,11 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-<<<<<<< HEAD
+
   database: mortgage_hippo_test
-=======
+
   database: mortgage-hippo_test
->>>>>>> 9568bf8e87d3e6ac8c2cfeae9ddc30c4f37c75d1
+
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -92,12 +92,12 @@ test:
 #
 production:
   <<: *default
-<<<<<<< HEAD
+
   database: mortgage_hippo_production
   username: mortgage_hippo
   password: <%= ENV['MORTGAGE_HIPPO_DATABASE_PASSWORD'] %>
-=======
+
   database: mortgage-hippo_production
   username: mortgage-hippo
   password: <%= ENV['MORTGAGE-HIPPO_DATABASE_PASSWORD'] %>
->>>>>>> 9568bf8e87d3e6ac8c2cfeae9ddc30c4f37c75d1
+

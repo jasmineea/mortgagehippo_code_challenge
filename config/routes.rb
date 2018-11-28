@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Rails.application.routes.draw do    
   namespace :api do
         namespace :v1 do
@@ -18,13 +17,3 @@ Rails.application.routes.draw do
   end
 
 end
-=======
-Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  namespace :api do
-    resources :coins
-    resources :transactions
-  end
-end
-
->>>>>>> 9568bf8e87d3e6ac8c2cfeae9ddc30c4f37c75d1
